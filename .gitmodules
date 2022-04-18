@@ -1,0 +1,6 @@
+[submodule "react-to-do"]
+	path = react-to-do
+	url = git@github.com:csnti/react-to-do.git
+[submodule "react-expenses"]
+	path = react-expenses
+	url = git@github.com:csnti/react-expenses.git
