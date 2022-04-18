@@ -1,0 +1,50 @@
+# This example buildspec will enable submodules for CodeBuild projects that are both 
+# triggered directly and via CodePipeline
+#
+# This buildspec is designed with help from Stack Overflow: 
+# https://stackoverflow.com/questions/42712542/how-to-auto-deploying-git-repositories-with-submodules-on-aws
+version: 0.2  # Always use version 2
+env:
+  variables:
+    # The remote origin that will be used if building through CodePipeline
+    remote_origin: "https://github.com/csnti/csnti.net"
+  parameter-store:
+    # The SSH RSA Key used by our machine user
+    ssh_key: "id_rsa"
+phases:
+  install:
+    commands:
+      # Add the "machine user's" ssh key and activate it - this allows us to get private (sub) repositories
+      - mkdir -p ~/.ssh                   # Ensure the .ssh directory exists
+      - echo "$ssh_key" > ~/.ssh/id_rsa  # Save the machine user's private key
+      - chmod 600 ~/.ssh/id_rsa          # Adjust the private key permissions (avoids a critical error)
+      - eval "$(ssh-agent -s)"            # Initialize the ssh agent
+      - ssh-add ~/.ssh/id_rsa            # Add the machine user's key to the ssh "keychain"
+      # SSH Credentials have been set up. Check for a .git directory to determine if we need to set up our git package
+      - |
+        if [ ! -d ".git" ]; then
+          git init                                              # Initialize Git
+          git remote add origin "$remote_origin"                # Add the remote origin so we can fetch
+          git fetch                                             # Get all the things
+          git checkout -f "$CODEBUILD_RESOLVED_SOURCE_VERSION"  # Checkout the specific commit we are building
+        fi
+      # Now that setup is complete, get submodules
+      - git submodule init
+      - git submodule update --recursive
+      # Additional install steps... (npm install, etc)
+  pre_build:
+    commands:
+      - npm install   
+  build:
+    commands:
+      # Build commands...
+      cd ~/react-to-do
+      npm run build
+      cd /~react-expenses
+      npm run build
+artifacts:
+  files:
+    # Artifact Definitions...
+     - '**/*'
+    discard-paths: no
+    base-directory: build
