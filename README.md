@@ -1,4 +1,9 @@
 # This repo is a staging area for csnti.net
 
-Git submodules are cloned, compiled, then deployed using AWS CodePipeline and CodeBuild
+AWS CodePipeline is connected to Github and detects any push to the main branch.
 
+AWS CodeBuild starts a linux instance which handles the entire build process using a Yaml script.
+
+Git submodules are cloned by a "machine user" with a private SSH key saved and encrypted on Paramter Store, 
+
+read-access to this SSH key is granted to CodeBuild using AWS Identity Access Management (no one's getting hacked today 😎).
