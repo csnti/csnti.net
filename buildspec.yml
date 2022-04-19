@@ -45,5 +45,5 @@ phases:
 artifacts:
   files:
     # Artifact Definitions...
-    - '**/*'
-  base-directory: 'dist'
+     - '**/*'
+    base-directory: build
