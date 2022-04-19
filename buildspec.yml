@@ -38,10 +38,10 @@ phases:
   build:
     commands:
       # Build commands...
-      cd ~//src/react-to-do
-      npm run build
-      cd /~/src/react-expenses
-      npm run build
+      - cd ~/react-to-do
+      - npm run build
+      - cd ~/react-expenses
+      - npm run build
 artifacts:
   files:
     # Artifact Definitions...
