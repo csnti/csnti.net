@@ -8,7 +8,7 @@ AWS CodeBuild starts a linux instance which handles the entire build process usi
 Git submodules are cloned by a "machine user" with a private SSH key,<br/>
 saved on Parameter Store, in an encrypted state.
 
-Read-access to this SSH key is granted only to CodeBuild by Identity Access Management.<br/>
+Read-access to this SSH key is granted only to CodeBuild by Identity and Access Management.<br/>
 
 If the build proccess succeeds, then it saves the contents of the directory to an S3 bucket
 
