@@ -38,8 +38,8 @@ phases:
   build:
     commands:
       # Build commands...
-      - cd react-to-do && npm install && npm run build
-      - cd react-expenses && npm install && npm run build
+      - cd react-to-do/react-to-do && npm install && npm run build
+      - cd react-expenses/react-expenses && npm install && npm run build
 
 artifacts:
   files:
