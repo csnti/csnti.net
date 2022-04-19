@@ -8,7 +8,7 @@ env:
   variables:
     # The remote origin that will be used if building through CodePipeline
     remote_origin: "git@github.com:csnti/csnti.net.git"
-  parameter-store:
+  parameter-store: 
     # The SSH RSA Key used by our machine user
     ssh_key: "id_rsa"
 phases:
@@ -46,5 +46,5 @@ artifacts:
   files:
     # Artifact Definitions...
      - '**/*'
-    discard-paths: no
-    base-directory: build
+discard-paths: no
+base-directory: 'dist'
