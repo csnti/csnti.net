@@ -34,13 +34,15 @@ phases:
       # Additional install steps... (npm install, etc)
   pre_build:
     commands:
-      - npm install   
+         
   build:
     commands:
       # Build commands...
       - cd ~/react-to-do
+      - npm install
       - npm run build
       - cd ~/react-expenses
+      - npm install
       - npm run build
 artifacts:
   files:
