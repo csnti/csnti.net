@@ -1,6 +1,6 @@
 # This repo automatically deploys to csnti.net
 
-AWS CodePipeline is connected to Github and detects any push to the main branch.\ 
+AWS CodePipeline is connected to Github and detects any push to the main branch.<br/>
 This allows for Continuous Integration / Continuous Delivery (CI/CD)
 
 AWS CodeBuild starts a linux instance which handles the entire build process using a YAML script.\
