@@ -2,7 +2,8 @@
 
 AWS CodePipeline is connected to Github and detects any push to the main branch.
 
-AWS CodeBuild starts a linux instance which handles the entire build process using a Yaml script.
+AWS CodeBuild starts a linux instance which handles the entire build process using a Yaml script,
+then it dumps everything into an S3 bucket.
 
 Git submodules are cloned by a "machine user" with a private SSH key 
 that's saved and encrypted on Parameter Store. 
