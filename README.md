@@ -14,6 +14,8 @@ If the build proccess succeeds, then it saves the contents of the directory to a
 Usually deployment takes about 10-15 minutes to complete.<br/>
 <br/>
 <br/>
+<br/>
+<br/>
 As of now, I have to invalidate CloudFront files manually with /* <br/>
 
 The next feature that I'd like to integrate into CodePipeline<br/>
