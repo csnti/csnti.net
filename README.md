@@ -20,4 +20,4 @@ As of now, I have to invalidate CloudFront files manually with /* <br/>
 
 The next feature that I'd like to integrate into CodePipeline<br/>
 is a Lambda function that handles CloudFront invalidations right after deployment.<br/>
-I'll be doing this later though, it's not a huge priority right now.
+I'll be doing this later.
