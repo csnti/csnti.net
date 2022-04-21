@@ -10,7 +10,7 @@ saved on Parameter Store, in an encrypted state.
 
 Read-access to this SSH key is granted only to CodeBuild by Identity and Access Management.<br/>
 
-If the build proccess succeeds, then it saves the contents of the directory to an S3 bucket.
+If the build proccess succeeds, then it saves the contents of the directory to an S3 bucket.<br/>
 Usually deployment takes about 10-15 minutes to complete.<br/>
 
 As of now, I have to invalidate CloudFront files manually with /* <br/>
