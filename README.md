@@ -11,4 +11,11 @@ saved on Parameter Store, in an encrypted state.
 Read-access to this SSH key is granted only to CodeBuild by Identity and Access Management.<br/>
 
 If the build proccess succeeds, then it saves the contents of the directory to an S3 bucket.
-
+Usually deployment takes about 10-15 minutes to complete.
+<br/>
+<br/>
+<br/>
+As of now, I have to invalidate CLoudFront files manually with /* <br/>
+The next feature that I'd like to integrate into CodePipeline<br/>
+is a Lambda function that handles that process right after deployment.<br/>
+I'll be doing this later though, it's not a huge priority right now.
