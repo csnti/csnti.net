@@ -16,9 +16,4 @@ Usually deployment takes about 10-15 minutes to complete (at this scale).<br/>
 <br/>
 <br/>
 <br/>
-<br/>
-A̶s̶ ̶o̶f̶ ̶n̶o̶w̶,̶ ̶I̶ ̶h̶a̶v̶e̶ ̶t̶o̶ ̶i̶n̶v̶a̶l̶i̶d̶a̶t̶e̶ ̶C̶l̶o̶u̶d̶F̶r̶o̶n̶t̶ ̶f̶i̶l̶e̶s̶ ̶m̶a̶n̶u̶a̶l̶l̶y̶ ̶w̶i̶t̶h̶ ̶/̶*̶ <br/>
-
-It seems that CloudFront instantly invalidated (updated its CDN to the S3 bucket)<br/>
-after my most-recent deployment, without me having to do anything.<br/>
-That's pretty convenient. I'll keep an eye on it in future updates.
+I need to implement a Lambda function that updates CloudFront to the S3 bucket.
