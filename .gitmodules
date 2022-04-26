@@ -4,3 +4,6 @@
 [submodule "react-to-do"]
 	path = react-to-do
 	url = git@github.com:csnti/react-to-do.git
+[submodule "psk-generator"]
+	path = psk-generator
+	url = git@github.com:csnti/psk-generator.git
