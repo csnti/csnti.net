@@ -12,8 +12,17 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
+- script: touch test.txt
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
+- task: AzureFileCopy@4
+  inputs:
+    SourcePath: '/*'
+    azureSubscription: 'Azure subscription 1(88a2524f-214d-420e-8e80-b3fee9fd55bc)'
+    Destination: 'AzureBlob'
+    storage: 'csnti'
+    ContainerName: '$web'
+    BlobPrefix: '/'
